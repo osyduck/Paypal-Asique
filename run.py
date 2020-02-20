@@ -2,10 +2,6 @@
 
 import requests, time, json, datetime
 
-
-
-
-
 def getStr(string,start,end):
 	str = string.split(start)
 	str = str[1].split(end)
@@ -39,7 +35,7 @@ def req(cookie, payload):
 cookie = input("Cookie: ")
 csrf = input("CSRF: ")
 brp = int(input("Berapa kali loop: "))
-
+print("\n\n")
 print("Paypal Conversion by osyduck\n")
 for i in range(brp):
     Data_USD_to_JPY = "{\"sourceCurrency\":\"USD\",\"sourceAmount\":0.02,\"targetCurrency\":\"JPY\",\"_csrf\":\"%s\"}"%(csrf)
@@ -56,4 +52,4 @@ for i in range(brp):
 
     x = datetime.datetime.now()
     balance = getStr(TWD_to_USD, 'totalAvailable":{"amount":"', '"')
-    print("[%s] Balance: %s"%(x, balance))
+    print("[%s] Balance: %s$"%(x, balance))
